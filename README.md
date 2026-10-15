@@ -72,15 +72,6 @@ Los resultados corresponden al laboratorio y escenarios documentados; no implica
 
 `IEEE 802.1X` · `FreeRADIUS` · `Cisco IOSv-L2` · `GNS3` · `VMware` · `Wazuh` · `Docker` · `Promtail` · `Loki` · `Grafana` · `Ubuntu Server` · `iptables` · `SSH` · `Google Authenticator`
 
-## Limitaciones y mejoras pendientes
-
-- La comprobación de postura implementada se centra en UFW; la monitorización de antivirus y actualizaciones quedó como trabajo futuro.
-- La configuración de laboratorio usa EAP-MD5. No debe reutilizarse como recomendación para producción; una evolución debe evaluar un método EAP más robusto y la gestión de certificados.
-- La configuración de Docker Content Trust quedó preparada, pero la firma de la imagen no se completó al no disponer de un registro de imágenes.
-- Trivy encontró **210 vulnerabilidades** en la imagen evaluada durante el TFM (79 bajas, 130 medias, 1 alta y 0 críticas en ese análisis). Es un resultado histórico de esa imagen; queda pendiente revisar los hallazgos, seleccionar/versionar una imagen adecuada y volver a escanear.
-- Se validó el reinicio del contenedor, no la alta disponibilidad ante fallos del host o de la red.
-- Antes de publicar configuraciones reproducibles, se deben revisar y unificar los identificadores de las reglas de correlación de Wazuh y su asociación con la respuesta activa. También quedan como mejoras la validación con switches físicos y el despliegue con Ansible.
-
 ## Seguridad
 
 Proyecto académico para un entorno controlado. No publiques credenciales, secretos RADIUS, claves privadas, semillas OTP, códigos de recuperación ni capturas que los revelen. Las pruebas deben limitarse a sistemas propios o autorizados.
